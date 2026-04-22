@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Student {
+    String name;
+    double gpa;
+
+    public Student(String name, double gpa) {
+        this.name = name;
+        this.gpa = gpa;
+    }
+
+    public String toString() {
+        return name + " - " + gpa;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Student> students = new ArrayList<>();
+
+        students.add(new Student("Aruzhan", 3.5));
+        students.add(new Student("Dias", 3.9));
+        students.add(new Student("Ali", 2.8));
+
+        students.sort((s1, s2) -> Double.compare(s2.gpa, s1.gpa));
+
+        for (Student s : students) {
+            System.out.println(s);
+        }
+    }
+}
